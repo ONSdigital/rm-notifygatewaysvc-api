@@ -11,7 +11,7 @@ spring:
       enabled: never
 
   application:
-    name: Notify Gateway API
+    name: notifygatewaysvc
 
   sleuth:
     sampler:
@@ -71,3 +71,7 @@ messaging:
   maxAttempts: 1
   prefetchCount: 10
   txSize: 1
+
+server:
+  port: 8181
+  servlet-path: /mgmt
