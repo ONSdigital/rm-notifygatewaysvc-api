@@ -1,6 +1,7 @@
 package uk.gov.ons.ctp.response.notify.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import uk.gov.ons.ctp.common.error.CTPException;
 import uk.gov.ons.ctp.response.action.message.feedback.ActionFeedback;
 import uk.gov.ons.ctp.response.action.message.feedback.Outcome;
@@ -25,6 +26,7 @@ import static uk.gov.ons.ctp.response.notify.message.impl.ActionInstructionRecei
  * The service implementation for NotifyService
  */
 @Slf4j
+@RefreshScope
 @Named
 public class NotifyServiceImpl implements NotifyService {
 
