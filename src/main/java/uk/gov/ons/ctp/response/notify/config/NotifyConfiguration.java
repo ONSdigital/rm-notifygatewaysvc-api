@@ -2,6 +2,7 @@ package uk.gov.ons.ctp.response.notify.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import uk.gov.service.notify.NotificationClient;
@@ -9,6 +10,7 @@ import uk.gov.service.notify.NotificationClient;
 /**
  * Configuration specific to GOV.UK Notify
  */
+@RefreshScope
 @Configuration
 @ConfigurationProperties("notify")
 @Data
