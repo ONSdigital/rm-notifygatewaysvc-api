@@ -43,7 +43,7 @@ The Notify Gateway provides an interface for Response Management to send communi
             </settings>
 ```
 
-- mvn clean install -P artifactory-aws
+mvn clean install -P artifactory-aws
 
 
 ##################################################
@@ -53,7 +53,13 @@ The Notify Gateway provides an interface for Response Management to send communi
     - install RabbitMQ and start it with: sudo /sbin/service rabbitmq-server start
 
 - To start:
-    - java -jar target/notifygatewaysvc-9.35.0-SNAPSHOT.jar
+    - for PROD:
+            - mvn spring-boot:run -Drun.profiles=prod
+            OR java -jar -Dspring.profiles.active=prod target/notifygatewaysvc-9.35.0-SNAPSHOT.jar
+
+    - for the default profile:
+            - mvn spring-boot:run
+            OR java -jar target/notifygatewaysvc-9.35.0-SNAPSHOT.jar
 
 
 ## Copyright
