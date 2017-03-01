@@ -2,9 +2,11 @@ package uk.gov.ons.ctp.response.notify;
 
 import lombok.extern.slf4j.Slf4j;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.jhades.JHades;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.integration.annotation.IntegrationComponentScan;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -23,6 +25,7 @@ import javax.inject.Named;
 @EnableScheduling
 @EnableCaching
 @ImportResource("springintegration/main.xml")
+@EnableDiscoveryClient
 @SpringBootApplication
 public class Application {
   /**

@@ -43,27 +43,34 @@ The Notify Gateway provides an interface for Response Management to send communi
             </settings>
 ```
 
-- mvn clean install
+- mvn clean install -P artifactory-aws
 
 
 ##################################################
 # To run the app
 ##################################################
 - Prerequisites:
-    - for logging:
-        - cd /var/log/ctp/responsemanagement
-        - mkdir notifygatewaysvc
-        - chmod 777 notifygatewaysvc
-    - Stop RabbitMQ if running: sudo /sbin/service rabbitmq-server stop
-    - Install ActiveMQ:
-        - Install Apache ActiveMQ 5.13.3: download and unzip under /opt
-        - Edit /conf/activemq.xml: replace 61616 with 53445 (port defined in broker-int.xml)
-        - Start it by going to /bin and typing: ./activemq console
-        - console accessed at http://localhost:8161/ with user = admin - pwd = admin
+    - Install RabbitMQ and sudo /sbin/service rabbitmq-server start
 
 - To start:
-    - cd .../rm-notify-gateway/target
-    - java -jar notifygatewaysvc-9.33.0-SNAPSHOT.jar
+    - for PROD:
+        - mvn spring-boot:run -Drun.profiles=prod
+        OR java -jar -Dspring.profiles.active=prod target/notifygatewaysvc-9.35.0-SNAPSHOT.jar
+
+    - for the default profile:
+        - mvn spring-boot:run
+        OR java -jar target/notifygatewaysvc-9.35.0-SNAPSHOT.jar
+
+
+- TODO For props config & Consul: create a bootstrap.yml with:
+            - under spring.cloud.consul.config:
+            enabled: true
+            format: FILES
+            prefix: configuration
+            defaultContext: apps
+            profileSeparator: '::'
+            - define a git repo for Consul props and point Consul to it
+            - start NotifygW and verify props are read from git
 
 
 ## Copyright
