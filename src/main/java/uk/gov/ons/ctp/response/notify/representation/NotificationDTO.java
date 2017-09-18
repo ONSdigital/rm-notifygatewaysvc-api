@@ -1,9 +1,13 @@
 package uk.gov.ons.ctp.response.notify.representation;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 import java.util.UUID;
-
-import lombok.*;
 
 /**
  * Domain model object

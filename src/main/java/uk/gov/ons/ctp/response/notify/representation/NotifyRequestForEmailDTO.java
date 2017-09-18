@@ -1,6 +1,10 @@
 package uk.gov.ons.ctp.response.notify.representation;
 
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -18,6 +22,6 @@ public class NotifyRequestForEmailDTO extends NotifyRequestDTO {
             + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";;
 
     @NotNull
-    @Pattern(regexp=EMAIL_REGEX)
+    @Pattern(regexp = EMAIL_REGEX)
     private String emailAddress;
 }
