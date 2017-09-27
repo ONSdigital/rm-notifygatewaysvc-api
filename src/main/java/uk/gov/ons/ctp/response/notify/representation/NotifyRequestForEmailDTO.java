@@ -22,6 +22,6 @@ public class NotifyRequestForEmailDTO extends NotifyRequestDTO {
         + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";;
 
     @NotNull
-    @Pattern(regexp= EMAIL_ADDRESS_REGEX)
+    @Pattern(regexp = EMAIL_ADDRESS_REGEX)
     private String emailAddress;
 }
