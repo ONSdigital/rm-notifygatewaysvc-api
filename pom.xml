@@ -25,16 +25,19 @@
     <dependency>
       <groupId>uk.gov.ons.ctp.common</groupId>
       <artifactId>framework</artifactId>
+      <version>10.49.8</version>
     </dependency>
 
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
+      <version>1.16.18</version>
     </dependency>
 
     <dependency>
       <groupId>net.codesup.util</groupId>
       <artifactId>jaxb2-rich-contract-plugin</artifactId>
+      <version>1.18.0</version>
     </dependency>
 
     <dependency>
